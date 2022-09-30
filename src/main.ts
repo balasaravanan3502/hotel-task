@@ -16,6 +16,7 @@ const buttonToggler = async () => {
       await new Promise((resolve) => setTimeout(resolve, 50));
       i += 2;
     }
+
     var videoPlayer = document.getElementById(
       "video-player"
     ) as HTMLVideoElement;
@@ -34,15 +35,10 @@ toogleButton.addEventListener("click", buttonToggler);
 
 var videoSection = document.querySelector("video") as HTMLVideoElement;
 
-videoSection.addEventListener("scroll", function () {
-  console.log("asd");
-});
-
-window.onscroll = function () {
-  var sd = document.documentElement.scrollTop || document.body.scrollTop;
-  console.log("ASd");
+window.onload = () => {
+  const loadEffect = document.querySelector("effect");
+  const scrollEffect = () => {
+    console.log("ASD");
+  };
+  window.addEventListener("scroll", scrollEffect);
 };
-
-document.body.addEventListener("scroll", () => {
-  console.log(document.documentElement.scrollTop || document.body.scrollTop);
-});

@@ -19,11 +19,15 @@
 ul {
   margin: 0;
 }
+
+a {
+  text-decoration: none;
+}
 body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  font-family: Portico;
+  font-family: "Poppins";
   color: gray;
   background-color: transparent;
 }
@@ -104,6 +108,7 @@ section {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   animation: transitionIn 1s;
+  scroll-snap-align: start;
 }
 
 .main-video {
@@ -289,6 +294,8 @@ h1 {
   font-size: 5rem;
   font-family: Blacker;
   color: #bc9a5f;
+  transition: 1s;
+  transform-origin: left;
 }
 
 .room-sub-heading {
@@ -300,7 +307,8 @@ h1 {
   margin: auto;
   width: 75%;
   margin-top: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-family: "Poppins";
 }
 
 .hotel-quote {
@@ -380,7 +388,8 @@ h1 {
   letter-spacing: 1px;
   border-bottom: 1px solid #bc9a5f;
   padding-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
+  font-family: "Poppins";
 }
 
 .room-features-area {
@@ -477,7 +486,7 @@ h1 {
 }
 
 .photo-item {
-  margin-bottom: 5rem;
+  margin: 6rem 0rem;
 }
 .photo-item img {
   /* height: 35vh; */
@@ -494,8 +503,8 @@ h1 {
 }
 .photo-description {
   color: #bc9a5f;
-  font-family: "Poppins";
-  font-size: 1.1rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
 }
 
 .contact-hotel-name {
@@ -551,6 +560,7 @@ h1 {
   main {
     all: unset;
     width: 100%;
+    overflow-y: hidden;
   }
 
   section {
@@ -610,6 +620,7 @@ h1 {
   .main-video {
     /* opacity: 0.1; */
     background-color: black;
+    scroll-snap-align: start;
   }
 
   .room-name {
@@ -659,14 +670,17 @@ h1 {
 
   .room-name {
     all: unset;
+    /* border: 1px solid #bc9a5f; */
   }
 
   h1 {
     font-family: Blacker;
-    display: absolute;
-    top: calc(50% - 60px);
+    display: block;
+    color: #bc9a5f;
+    padding: 10px;
+    /* top: calc(50% - 60px); */
     font-size: 4.5rem;
-    all: unset;
+    /* all: unset; */
   }
 
   .section-room-details {
@@ -758,8 +772,8 @@ h1 {
     margin: auto;
     width: 75%;
     margin-top: 3rem;
-    font-size: 1.1rem;
-    font-family: "Poppins";
+    font-size: 1.6rem;
+    font-family: "";
   }
 
   .hotel-quote {
@@ -913,8 +927,8 @@ h1 {
   }
 
   .photo-gallery {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
+    /* height: auto; */
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -943,7 +957,7 @@ h1 {
   .photo-description {
     color: #bc9a5f;
     font-family: "Poppins";
-    font-size: 1.1rem;
+    font-size: 0.1rem;
   }
   .section-contact-details {
     all: unset;
@@ -961,7 +975,7 @@ h1 {
     color: #bc9a5f;
     font-size: 1.3rem;
     margin: auto;
-    font-family: Poppins;
+    font-family: "Poppins";
     text-align: center;
   }
 

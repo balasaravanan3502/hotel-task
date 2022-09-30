@@ -1,0 +1,976 @@
+@font-face {
+  font-family: Blacker;
+  src: url("./assets/blacker-sans-display-trial.light.ttf");
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: Quentin;
+  src: url("./assets/Quentin.ttf");
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: Portico;
+  src: url("./assets/PorticoOutline.otf") format("opentype");
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Portico;
+  color: gray;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vw;
+  transform-origin: top left;
+  transform: rotate(-90deg) translateX(-100vh);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.light-text {
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  transform-origin: top left;
+  transform: rotate(90deg) translateY(-100vh);
+}
+
+nav {
+  width: 9vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #bc9a5f; */
+  justify-content: space-between;
+  padding: 5vw 0px;
+  background-color: transparent;
+  position: absolute;
+  height: 90vh;
+  left: 0;
+  z-index: 1;
+}
+
+.burger-menu {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.company-logo {
+  font-size: 2rem;
+  color: #bc9a5f;
+  font-family: "Abril Fatface", cursive;
+}
+
+nav i {
+  font-size: 2rem;
+  color: #bc9a5f;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  /*   scroll-snap-align: start; */
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 3rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  animation: transitionIn 1s;
+}
+
+.main-video {
+  /* opacity: 0.1; */
+  background-color: black;
+}
+
+.room-name {
+  /* opacity: 0; */
+  border: 1px solid #bc9a5f;
+}
+
+.video-header {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(
+    rgba(11, 39, 65, 0.32) 87%,
+    rgba(0, 0, 0, 0)
+  );
+  opacity: 0;
+}
+.video-header::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: linear-gradient(
+    to bottom,
+    rgba(11, 11, 11, 0.52),
+    rgba(0, 0, 0, 0.73)
+  );
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: absolute;
+  top: 5vh;
+  left: 90vw;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.room-name {
+  position: absolute;
+  top: 30vh;
+  left: 40vw;
+  height: 120px;
+  z-index: 1;
+  color: #bc9a5f;
+}
+
+h1 {
+  font-family: Blacker;
+  display: absolute;
+  top: calc(50% - 60px);
+  font-size: 4.5rem;
+}
+
+.section-room-details {
+  /* background-color: #bc9a5f; */
+  display: flex;
+  /* justify-content: space-around; */
+  border-right: 1px solid #bc9a5f;
+  padding-right: 10rem;
+}
+
+.room-image {
+  width: 60vw;
+  transition: opacity 1s ease-out;
+  overflow: visible;
+}
+
+.room-image2 {
+  width: 40vw;
+}
+
+.flowers-1 {
+  position: absolute;
+  top: 0;
+  left: 370vw;
+  transform: rotate(20deg);
+}
+.flowers-2 {
+  position: absolute;
+  transform: rotate(210deg);
+  left: 460vw;
+  bottom: 0;
+}
+.section-heading {
+  border: 1px solid #bc9a5f;
+  /* width: 100%; */
+  width: 11vw;
+  margin-left: 10rem;
+}
+
+.section-heading span,
+.section-heading-vertical span {
+  transform: rotate(-90deg);
+  font-family: Blacker;
+  color: #bc9a5f;
+}
+
+.section-heading-vertical {
+  width: 11vw;
+  margin: 0rem 5rem;
+}
+.room-details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: gray;
+  margin: 1rem;
+  width: 90vw;
+  padding: 0rem 5rem;
+}
+
+.hotel-name {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-top: 10%;
+}
+
+.room-heading {
+  font-size: 5rem;
+  font-family: Blacker;
+  color: #bc9a5f;
+}
+
+.room-sub-heading {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.room-description {
+  margin: auto;
+  width: 75%;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.hotel-quote {
+  position: absolute;
+  font-family: Quentin;
+  width: 30vw;
+  font-size: 1.7rem;
+  color: #bc9a5f;
+}
+.quote-1 {
+  top: 80vh;
+  left: 110vw;
+}
+.quote-2 {
+  top: 5vh;
+  left: 300vw;
+  font-size: 1.5rem;
+}
+
+.room-card-name {
+  font-family: Blacker;
+  width: 20vw;
+  font-size: 2rem;
+  color: white;
+
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 514.5 115.5'%3E%3Cpath fill='%23B5AC85' d='M19.77 101.93c9.62-.36 9.66-.36 12.61 1.16A12.58 12.58 0 0 0 36 104.5a16.77 16.77 0 0 1 4.3 1.9c3.71 2 4.43 3.8 2.06 5-3.79 1.93 1.24 4.66 6.64 3.62a40.12 40.12 0 0 1 6.57-.46c5.55.06 19.78-1 22.16-1.62a5.66 5.66 0 0 1 2.53-.27c.45.22 12.91-.64 23.91-1.66 5-.46 28.9-1.9 35.73-2.15 3.76-.14 12.3-.6 19-1s18.51-1 26.27-1.31 19.08-.77 25.16-1.05 19.32-.64 29.42-.81 22.39-.45 27.29-.63 33.28-.23 63.05-.12c107.94.38 149.15.24 159.23-.56 8.44-.66 9.88-.94 13.38-2.63 4.88-2.35 6.75-4.87 4.81-6.46-1.15-.94-1.12-1.2.14-1.6 1.55-.49 1.48-.74-2.11-6.73-1.32-2.2-1.32-2.2 1.38-2.58a23 23 0 0 0 4.88-1.4c2.28-1 2.5-1.47 2.45-5.46-.1-9-3.7-16.33-9.57-19.53-2.51-1.36-3.09-2.29-4.08-6.56a31.91 31.91 0 0 0-8.11-15.63L489 31l-8.27-1c-4.55-.53-10.63-1.22-13.53-1.53-9.84-1.05-12.08-2.06-12.08-5.48a5.07 5.07 0 0 0-1.57-2.76 5.16 5.16 0 0 1-1.55-2.38c0-.49-1.19-2-2.63-3.41a13.6 13.6 0 0 1-2.63-3c0-.94-4.78-4.12-7.34-4.88a69.46 69.46 0 0 0-11.05-1.15c-4.62-.2-16.44-.94-26.27-1.64C364.09 1.1 315.26-.31 286.5.46c-7.52.2-24.3.63-37.31.94S214.9 2.59 201.9 3.33s-26.24 1.46-29.42 1.61c-6.88.32-17.83 1-27.52 1.79-3.86.3-10.72.78-15.24 1.06-14.46.91-30.07 2.12-37.63 2.94C74 12.68 66.47 13.36 61 13.56s-5.91.13-7.11-1.2c-.69-.78-1-1.63-.69-1.89.81-.66-4.76-5-5.7-4.44-1.62 1-4.2 4.84-4.81 7.2l-.64 2.48-6.74.36c-3.7.2-9.38.31-12.61.23-7.08-.17-9.56.69-10.54 3.63a13.83 13.83 0 0 1-2.3 3.86 11.64 11.64 0 0 0-2.19 10.13c1.08 4.21 0 10.66-2 11.89-1.79 1.07-3.41 10.45-2.37 13.48a31.91 31.91 0 0 1 1 3.26c0 .32 1.78 1.73 3.88 3.13L12 68.22l5.37-.35C33.6 66.8 48 66.08 48.72 66.3a1.3 1.3 0 0 1 .81 1.18A2 2 0 0 0 50.67 69c1.64.83-5.61 2-19.32 3.09-10.46.84-23 2.8-25.25 4-.84.43-1.94 2.5-3.29 6.17a10.42 10.42 0 0 1-1.46 2.4c-1.42 1.75-1.47 2.67-.14 2.67 1 0 .72 2.16-.49 3.15-.34.28-.19.64.34.81s.79 1.2.58 2.3c-.45 2.31 1.73 5.07 5.72 7.24 2.75 1.46 2.78 1.47 12.41 1.1z'/%3E%3C/svg%3E");
+  background-repeat: none;
+  background-size: 100%;
+}
+
+.card-name-1 {
+  top: 10vh;
+  left: 125vw;
+  position: absolute;
+}
+.feature-heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: lighter;
+  padding-top: 6rem;
+  font-family: Blacker;
+}
+
+.room-features {
+  /* margin-top: 10rem; */
+  display: flex;
+  justify-content: center;
+}
+
+.hotel-outline-name {
+  z-index: 1;
+  font-size: 8rem;
+  color: #bc9a5f;
+  font-family: Portico;
+  font-weight: 100;
+}
+.room-features-image-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.features-left {
+  margin-left: 4rem;
+}
+
+.room-features-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 60vh;
+}
+
+.room-features-description {
+  letter-spacing: 1px;
+  border-bottom: 1px solid #bc9a5f;
+  padding-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.room-features-area {
+  margin-bottom: 2rem;
+}
+
+.room-features-heading {
+  font-weight: bolder;
+  color: #bc9a5f;
+  font-family: Blacker;
+  font-size: 1.8rem;
+}
+
+.room-features-ans {
+  font-size: 1.9rem;
+  font-weight: 100;
+}
+
+.below-image {
+  position: absolute;
+  top: 98vh;
+  left: 300vw;
+}
+
+.section-amenities-details {
+  border-left: 1px solid #bc9a5f;
+  border-right: 1px solid #bc9a5f;
+
+  margin: 0px 20px;
+
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-image {
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  filter: invert(62%) sepia(74%) saturate(248%) hue-rotate(359deg)
+    brightness(87%) contrast(87%);
+}
+
+.side-image-1 {
+  left: 395vw;
+  bottom: 0;
+  height: 30vh;
+}
+
+.side-image-2 {
+  right: 0;
+  top: 0;
+  transform: rotate(-180deg);
+}
+.amenities-list {
+  /* width: 100%; */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* background-color: #bc9a5f; */
+}
+
+.amenities-item {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #bc9a5f;
+  padding: 1rem;
+}
+.amenities-item i {
+  font-size: 2rem;
+}
+
+.amenities-item span {
+  font-size: 1rem;
+}
+
+.photo-gallery {
+  /* margin-top: 5rem; */
+  width: 30vw;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-item {
+  margin-bottom: 5rem;
+}
+.photo-item img {
+  /* height: 35vh; */
+  width: 15vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-title {
+  color: #bc9a5f;
+  font-family: Blacker;
+  font-size: 2.6rem;
+}
+.photo-description {
+  color: #bc9a5f;
+  font-family: "Poppins";
+  font-size: 1.1rem;
+}
+
+.contact-hotel-name {
+  font-family: Blacker;
+  font-size: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+.contact-right-panel p {
+  color: #bc9a5f;
+  font-size: 2rem;
+}
+
+.section-contact-details {
+  width: 90vw;
+}
+
+@keyframes transitionIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(200deg);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: rotateX(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes imageIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(-200deg);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: rotateX(10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    all: unset;
+    width: 100%;
+  }
+
+  section {
+    all: unset;
+    display: block;
+  }
+
+  article {
+    all: unset;
+  }
+
+  .burger-menu {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  .company-logo {
+    font-size: 2rem;
+    color: #bc9a5f;
+    font-family: "Abril Fatface", cursive;
+  }
+
+  nav {
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5vw 0px;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+  }
+
+  nav i {
+    font-size: 2rem;
+    color: #bc9a5f;
+  }
+
+  section {
+    width: 100vw;
+    height: 100vh;
+    /*   scroll-snap-align: start; */
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 3rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    animation: transitionIn 1s;
+  }
+
+  .main-video {
+    /* opacity: 0.1; */
+    background-color: black;
+  }
+
+  .room-name {
+    /* opacity: 0; */
+    border: 1px solid #bc9a5f;
+  }
+
+  .video-header {
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(
+      rgba(11, 39, 65, 0.32) 87%,
+      rgba(0, 0, 0, 0)
+    );
+    opacity: 0;
+  }
+  .video-header::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: linear-gradient(
+      to bottom,
+      rgba(11, 11, 11, 0.52),
+      rgba(0, 0, 0, 0.73)
+    );
+  }
+
+  .switch {
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    display: none;
+  }
+
+  .room-name {
+    all: unset;
+  }
+
+  h1 {
+    font-family: Blacker;
+    display: absolute;
+    top: calc(50% - 60px);
+    font-size: 4.5rem;
+    all: unset;
+  }
+
+  .section-room-details {
+    /* background-color: #bc9a5f; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    border-right: none;
+    padding-right: 0rem;
+  }
+
+  .room-area-sleep {
+    margin-bottom: 3rem;
+  }
+  .room-image {
+    transition: opacity 1s ease-out;
+    all: unset;
+    /* padding: 1rem; */
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .room-image2 {
+    width: 100%;
+  }
+
+  .flowers-1 {
+    display: none;
+  }
+  .flowers-2 {
+    all: unset;
+    margin: auto;
+    width: 25%;
+    margin-top: 1rem;
+  }
+  .section-heading,
+  .section-heading-vertical {
+    all: unset;
+  }
+
+  .section-heading span,
+  .section-heading-vertical span {
+    transform: rotate(0deg);
+    font-family: Blacker;
+    color: #bc9a5f;
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    border: 1px solid #bc9a5f;
+    padding: 1rem 0.5rem;
+  }
+
+  .section-heading-vertical {
+    all: unset;
+    width: 100%;
+  }
+
+  .room-details {
+    all: unset;
+    text-align: center;
+    color: gray;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: gray;
+  }
+
+  .hotel-name {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 10%;
+  }
+
+  .room-heading {
+    font-size: 5rem;
+    font-family: Blacker;
+    color: #bc9a5f;
+  }
+
+  .room-sub-heading {
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-family: "Poppins";
+  }
+
+  .room-description {
+    margin: auto;
+    width: 75%;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    font-family: "Poppins";
+  }
+
+  .hotel-quote {
+    all: unset;
+    font-family: Quentin;
+    font-size: 1.7rem;
+    color: #bc9a5f;
+    margin: 5rem 0rem;
+  }
+  .quote-1 {
+    top: 80vh;
+    left: 110vw;
+  }
+  .quote-2 {
+    display: none;
+  }
+
+  .room-card-name {
+    all: unset;
+
+    font-family: Blacker;
+    font-size: 2rem;
+    color: white;
+
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 514.5 115.5'%3E%3Cpath fill='%23B5AC85' d='M19.77 101.93c9.62-.36 9.66-.36 12.61 1.16A12.58 12.58 0 0 0 36 104.5a16.77 16.77 0 0 1 4.3 1.9c3.71 2 4.43 3.8 2.06 5-3.79 1.93 1.24 4.66 6.64 3.62a40.12 40.12 0 0 1 6.57-.46c5.55.06 19.78-1 22.16-1.62a5.66 5.66 0 0 1 2.53-.27c.45.22 12.91-.64 23.91-1.66 5-.46 28.9-1.9 35.73-2.15 3.76-.14 12.3-.6 19-1s18.51-1 26.27-1.31 19.08-.77 25.16-1.05 19.32-.64 29.42-.81 22.39-.45 27.29-.63 33.28-.23 63.05-.12c107.94.38 149.15.24 159.23-.56 8.44-.66 9.88-.94 13.38-2.63 4.88-2.35 6.75-4.87 4.81-6.46-1.15-.94-1.12-1.2.14-1.6 1.55-.49 1.48-.74-2.11-6.73-1.32-2.2-1.32-2.2 1.38-2.58a23 23 0 0 0 4.88-1.4c2.28-1 2.5-1.47 2.45-5.46-.1-9-3.7-16.33-9.57-19.53-2.51-1.36-3.09-2.29-4.08-6.56a31.91 31.91 0 0 0-8.11-15.63L489 31l-8.27-1c-4.55-.53-10.63-1.22-13.53-1.53-9.84-1.05-12.08-2.06-12.08-5.48a5.07 5.07 0 0 0-1.57-2.76 5.16 5.16 0 0 1-1.55-2.38c0-.49-1.19-2-2.63-3.41a13.6 13.6 0 0 1-2.63-3c0-.94-4.78-4.12-7.34-4.88a69.46 69.46 0 0 0-11.05-1.15c-4.62-.2-16.44-.94-26.27-1.64C364.09 1.1 315.26-.31 286.5.46c-7.52.2-24.3.63-37.31.94S214.9 2.59 201.9 3.33s-26.24 1.46-29.42 1.61c-6.88.32-17.83 1-27.52 1.79-3.86.3-10.72.78-15.24 1.06-14.46.91-30.07 2.12-37.63 2.94C74 12.68 66.47 13.36 61 13.56s-5.91.13-7.11-1.2c-.69-.78-1-1.63-.69-1.89.81-.66-4.76-5-5.7-4.44-1.62 1-4.2 4.84-4.81 7.2l-.64 2.48-6.74.36c-3.7.2-9.38.31-12.61.23-7.08-.17-9.56.69-10.54 3.63a13.83 13.83 0 0 1-2.3 3.86 11.64 11.64 0 0 0-2.19 10.13c1.08 4.21 0 10.66-2 11.89-1.79 1.07-3.41 10.45-2.37 13.48a31.91 31.91 0 0 1 1 3.26c0 .32 1.78 1.73 3.88 3.13L12 68.22l5.37-.35C33.6 66.8 48 66.08 48.72 66.3a1.3 1.3 0 0 1 .81 1.18A2 2 0 0 0 50.67 69c1.64.83-5.61 2-19.32 3.09-10.46.84-23 2.8-25.25 4-.84.43-1.94 2.5-3.29 6.17a10.42 10.42 0 0 1-1.46 2.4c-1.42 1.75-1.47 2.67-.14 2.67 1 0 .72 2.16-.49 3.15-.34.28-.19.64.34.81s.79 1.2.58 2.3c-.45 2.31 1.73 5.07 5.72 7.24 2.75 1.46 2.78 1.47 12.41 1.1z'/%3E%3C/svg%3E");
+    background-repeat: none;
+    background-size: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-name-1 {
+    all: unset;
+  }
+  .feature-heading {
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 3rem;
+    font-weight: lighter;
+    padding-top: 6rem;
+    font-family: Blacker;
+  }
+
+  .room-features {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hotel-outline-name {
+    z-index: 1;
+    font-size: 8rem;
+    color: white;
+    font-family: Portico;
+    font-weight: 100;
+    position: absolute;
+  }
+  .room-features-image-left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .features-left {
+    margin-left: 0rem;
+  }
+
+  .room-features-right {
+    all: unset;
+    text-align: center;
+    font-family: "Poppins";
+  }
+
+  .room-features-description {
+    font-size: 1.1rem;
+    border: none;
+    padding: 1rem;
+  }
+
+  .room-features-area {
+    margin-bottom: 2rem;
+  }
+
+  .room-features-heading {
+    font-weight: bolder;
+    color: #bc9a5f;
+    font-family: Blacker;
+    font-size: 1.8rem;
+  }
+
+  .room-features-ans {
+    font-size: 1.9rem;
+    font-weight: 100;
+  }
+
+  .below-image {
+    all: unset;
+    display: none;
+  }
+
+  .section-amenities-details {
+    border: none;
+    margin: 0px 0px;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .side-image {
+    all: unset;
+    display: none;
+  }
+
+  .side-image-1 {
+    all: unset;
+    display: none;
+  }
+
+  .side-image-2 {
+    all: unset;
+    display: none;
+  }
+  .amenities-list {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* background-color: #bc9a5f; */
+  }
+
+  .amenities-item {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #bc9a5f;
+    /* padding: 1rem; */
+  }
+  .amenities-item i {
+    font-size: 2rem;
+  }
+
+  .amenities-item span {
+    font-size: 1rem;
+  }
+
+  .photo-gallery {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 0rem;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo-item {
+    margin-bottom: 5rem;
+    padding: 1rem;
+  }
+  .photo-item img {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .photo-title {
+    color: #bc9a5f;
+    font-family: Blacker;
+    font-size: 2.6rem;
+  }
+  .photo-description {
+    color: #bc9a5f;
+    font-family: "Poppins";
+    font-size: 1.1rem;
+  }
+  .section-contact-details {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .contact-hotel-name {
+    font-family: Blacker;
+    font-size: 2rem;
+    margin-top: 0rem;
+    text-align: center;
+  }
+  .contact-right-panel p {
+    color: #bc9a5f;
+    font-size: 1.3rem;
+    margin: auto;
+    font-family: Poppins;
+    text-align: center;
+  }
+
+  .card-name-2 {
+    width: 100%;
+    margin: 1rem;
+  }
+
+  .light-text {
+    display: none;
+  }
+}

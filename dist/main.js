@@ -38,10 +38,12 @@ const buttonToggler = () => __awaiter(void 0, void 0, void 0, function* () {
 toogleButton.addEventListener("click", buttonToggler);
 var videoSection = document.querySelector("video");
 window.onload = () => {
-    const loadEffect = document.querySelector("effect");
-    const scrollEffect = () => {
-        console.log("ASD");
-    };
-    window.addEventListener("scroll", scrollEffect);
+    var width = screen.width;
+    console.log(width);
+    if (width < 1201) {
+        var videoPlayer = document.getElementById("video-player");
+        console.log("Asdasd");
+        videoPlayer.play();
+    }
 };
 //# sourceMappingURL=main.js.map

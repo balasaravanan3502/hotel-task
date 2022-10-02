@@ -116,11 +116,6 @@ section {
   background-color: black;
 }
 
-.room-name {
-  /* opacity: 0; */
-  border: 1px solid #bc9a5f;
-}
-
 .video-header {
   position: relative;
   width: 100%;
@@ -216,6 +211,7 @@ input:checked + .slider:before {
   height: 120px;
   z-index: 1;
   color: #bc9a5f;
+  border: 1px solid #bc9a5f;
 }
 
 h1 {
@@ -246,7 +242,7 @@ h1 {
 .flowers-1 {
   position: absolute;
   top: 0;
-  left: 370vw;
+  left: 365vw;
   transform: rotate(20deg);
 }
 .flowers-2 {
@@ -259,7 +255,7 @@ h1 {
   border: 1px solid #bc9a5f;
   /* width: 100%; */
   width: 11vw;
-  margin-left: 10rem;
+  margin-left: 7rem;
 }
 
 .section-heading span,
@@ -434,7 +430,7 @@ h1 {
 }
 
 .side-image-1 {
-  left: 395vw;
+  left: 392vw;
   bottom: 0;
   height: 30vh;
 }
@@ -471,23 +467,19 @@ h1 {
 }
 
 .photo-gallery {
-  /* margin-top: 5rem; */
   width: 30vw;
-  /* height: 100vh; */
+  /* height: 100%; */
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   padding: 2rem;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
 }
 
 .photo-item {
-  margin: 6rem 0rem;
+  margin: 5rem 0rem;
 }
 .photo-item img {
-  /* height: 35vh; */
+  /* height: 22vh; */
   width: 15vw;
   margin: auto;
   display: flex;
@@ -498,11 +490,13 @@ h1 {
   color: #bc9a5f;
   font-family: Blacker;
   font-size: 2.6rem;
+  margin-top: 1rem;
 }
 .photo-description {
   color: #bc9a5f;
   font-family: "Raleway", sans-serif;
   font-size: 1.2rem;
+  margin-top: 1rem;
 }
 
 .contact-hotel-name {
@@ -585,11 +579,8 @@ h1 {
   nav {
     width: 100%;
     height: 10%;
-    align-items: center;
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5vw 0px;
     background-color: transparent;
     position: absolute;
     top: 0;
@@ -619,10 +610,18 @@ h1 {
     /* opacity: 0.1; */
     background-color: black;
     scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
   }
 
   .room-name {
     /* opacity: 0; */
+    border: 1px solid #bc9a5f;
+    all: unset;
+    position: block;
+    height: 120px;
+    z-index: 1;
+    color: #bc9a5f;
     border: 1px solid #bc9a5f;
   }
 
@@ -633,49 +632,18 @@ h1 {
       rgba(11, 39, 65, 0.32) 87%,
       rgba(0, 0, 0, 0)
     );
-    opacity: 0;
-  }
-  .video-header::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-image: linear-gradient(
-      to bottom,
-      rgba(11, 11, 11, 0.52),
-      rgba(0, 0, 0, 0.73)
-    );
+    opacity: 1;
   }
 
-  .switch {
-    width: 60px;
-    height: 34px;
-  }
-
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  /* The slider */
   .slider {
     display: none;
-  }
-
-  .room-name {
-    all: unset;
-    /* border: 1px solid #bc9a5f; */
   }
 
   h1 {
     font-family: Blacker;
     display: block;
     color: #bc9a5f;
-    padding: 10px;
+    /* padding: 10px; */
     /* top: calc(50% - 60px); */
     font-size: 4.5rem;
     /* all: unset; */
@@ -771,8 +739,7 @@ h1 {
     margin: auto;
     width: 75%;
     margin-top: 3rem;
-    font-size: 1.6rem;
-    font-family: "";
+    font-size: 1.3rem;
   }
 
   .hotel-quote {
@@ -854,10 +821,6 @@ h1 {
     padding: 1rem;
   }
 
-  .room-features-area {
-    margin-bottom: 2rem;
-  }
-
   .room-features-heading {
     font-weight: bolder;
     color: #bc9a5f;
@@ -882,20 +845,13 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 700px;
   }
 
-  .side-image {
-    all: unset;
-    display: none;
-  }
-
-  .side-image-1 {
-    all: unset;
-    display: none;
-  }
-
+  .side-image,
+  .side-image-1,
   .side-image-2 {
     all: unset;
     display: none;
@@ -915,14 +871,7 @@ h1 {
     justify-content: center;
     align-items: center;
     color: #bc9a5f;
-    /* padding: 1rem; */
-  }
-  .amenities-item i {
-    font-size: 2rem;
-  }
-
-  .amenities-item span {
-    font-size: 1rem;
+    padding: 1rem;
   }
 
   .photo-gallery {
@@ -935,6 +884,8 @@ h1 {
     align-items: center;
     justify-content: center;
     align-items: center;
+    overflow: none;
+    height: 100%;
   }
 
   .photo-item {

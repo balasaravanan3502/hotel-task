@@ -33,12 +33,16 @@ const buttonToggler = async () => {
 
 toogleButton.addEventListener("click", buttonToggler);
 
-var videoSection = document.querySelector("video") as HTMLVideoElement;
-
 window.onload = () => {
-  const loadEffect = document.querySelector("effect");
-  const scrollEffect = () => {
-    console.log("ASD");
-  };
-  window.addEventListener("scroll", scrollEffect);
+  var width = screen.width;
+  console.log(width);
+
+  if (width < 1201) {
+    var videoPlayer = document.getElementById(
+      "video-player"
+    ) as HTMLVideoElement;
+    console.log("Asdasd");
+
+    videoPlayer.play();
+  }
 };
